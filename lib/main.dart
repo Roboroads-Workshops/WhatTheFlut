@@ -31,6 +31,34 @@ class HowToFlut extends StatelessWidget {
                   ],
                 ),
               ),
+              Card(
+                child: Column(
+                  children: [
+                    Image.asset('assets/crepe.png'),
+                    ListTile(
+                      title: Text("Pannakoeken (Crepes)"),
+                      subtitle: Text("Category: Food"),
+                    ),
+                    ButtonBar(children: [
+                      FlatButton(onPressed: () {}, child: Text('READ MORE'))
+                    ]),
+                  ],
+                ),
+              ),
+              Card(
+                child: Column(
+                  children: [
+                    Image.asset('assets/dank-meme.png'),
+                    ListTile(
+                      title: Text("Dank Memes"),
+                      subtitle: Text("Category: Internet"),
+                    ),
+                    ButtonBar(children: [
+                      FlatButton(onPressed: () {}, child: Text('READ MORE'))
+                    ]),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
