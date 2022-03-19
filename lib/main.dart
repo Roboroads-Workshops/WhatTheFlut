@@ -20,6 +20,7 @@ class HowToFlut extends StatelessWidget {
               Card(
                 child: Column(
                   children: [
+                    Image.asset('assets/the-witcher-3.png'),
                     ListTile(
                       title: Text("The Witcher 3"),
                       subtitle: Text("Category: Videogame"),
