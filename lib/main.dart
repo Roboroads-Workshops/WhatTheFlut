@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:how_to_flut/widgets/review_card.dart';
 
 void main() {
   runApp(const HowToFlut());
@@ -17,47 +18,23 @@ class HowToFlut extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Card(
-                child: Column(
-                  children: [
-                    Image.asset('assets/the-witcher-3.png'),
-                    ListTile(
-                      title: Text("The Witcher 3"),
-                      subtitle: Text("Category: Videogame"),
-                    ),
-                    ButtonBar(children: [
-                      FlatButton(onPressed: () {}, child: Text('READ MORE'))
-                    ]),
-                  ],
-                ),
+              ReviewCard(
+                image: Image.asset('assets/the-witcher-3.png'),
+                title: "The Witcher 3",
+                category: "Videogame",
+                onPressed: () {},
               ),
-              Card(
-                child: Column(
-                  children: [
-                    Image.asset('assets/crepe.png'),
-                    ListTile(
-                      title: Text("Pannakoeken (Crepes)"),
-                      subtitle: Text("Category: Food"),
-                    ),
-                    ButtonBar(children: [
-                      FlatButton(onPressed: () {}, child: Text('READ MORE'))
-                    ]),
-                  ],
-                ),
+              ReviewCard(
+                image: Image.asset('assets/crepe.png'),
+                title: "Pannakoeken (Crepes)",
+                category: "Food",
+                onPressed: () {},
               ),
-              Card(
-                child: Column(
-                  children: [
-                    Image.asset('assets/dank-meme.png'),
-                    ListTile(
-                      title: Text("Dank Memes"),
-                      subtitle: Text("Category: Internet"),
-                    ),
-                    ButtonBar(children: [
-                      FlatButton(onPressed: () {}, child: Text('READ MORE'))
-                    ]),
-                  ],
-                ),
+              ReviewCard(
+                image: Image.asset('assets/dank-meme.png'),
+                title: "Dank Memes",
+                category: "Internet",
+                onPressed: () {},
               ),
             ],
           ),
