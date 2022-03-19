@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:how_to_flut/routes/review.dart';
 import 'package:how_to_flut/widgets/review_card.dart';
 
 class ReviewListRoute extends StatelessWidget {
@@ -17,19 +18,52 @@ class ReviewListRoute extends StatelessWidget {
               image: Image.asset('assets/the-witcher-3.png'),
               title: "The Witcher 3",
               category: "Videogame",
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Review(
+                      title: "The Witcher 3",
+                      body: "Wow this is great 10/10 would play again.",
+                      image: Image.asset('assets/the-witcher-3.png'),
+                    ),
+                  ),
+                );
+              },
             ),
             ReviewCard(
               image: Image.asset('assets/crepe.png'),
               title: "Pannakoeken (Crepes)",
               category: "Food",
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Review(
+                      title: "Pannakoeken (Crepes)",
+                      body: "Wow this is great 10/10 would eat again.",
+                      image: Image.asset('assets/crepe.png'),
+                    ),
+                  ),
+                );
+              },
             ),
             ReviewCard(
               image: Image.asset('assets/dank-meme.png'),
               title: "Dank Memes",
               category: "Internet",
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Review(
+                      title: "Dank Memes",
+                      body: "Wow this is great 10/10 would laugh again.",
+                      image: Image.asset('assets/dank-meme.png'),
+                    ),
+                  ),
+                );
+              },
             ),
           ],
         ),
