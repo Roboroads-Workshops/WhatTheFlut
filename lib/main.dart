@@ -9,15 +9,28 @@ class HowToFlut extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text(
-            "Welcome!",
-            style: TextStyle(
-              fontSize: 40,
-              color: Colors.blue,
-            ),
+        appBar: AppBar(
+          title: const Text("Roboroads Reviews Everything"),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              Card(
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: Text("The Witcher 3"),
+                      subtitle: Text("Category: Videogame"),
+                    ),
+                    ButtonBar(children: [
+                      FlatButton(onPressed: () {}, child: Text('READ MORE'))
+                    ]),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),
