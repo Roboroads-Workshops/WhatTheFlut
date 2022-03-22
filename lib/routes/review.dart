@@ -4,12 +4,14 @@ class Review extends StatefulWidget {
   final String title;
   final String body;
   final Image image;
+  final String heroTag;
 
   const Review({
     Key? key,
     required this.title,
     required this.body,
     required this.image,
+    required this.heroTag,
   }) : super(key: key);
 
   @override
@@ -31,7 +33,7 @@ class _ReviewState extends State<Review> {
       ),
       body: Column(
         children: [
-          widget.image,
+          Hero(tag: widget.heroTag, child: widget.image),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(widget.body),
