@@ -18,7 +18,7 @@ class ReviewListRoute extends StatelessWidget {
               image: Image.asset('assets/the-witcher-3.png'),
               title: "The Witcher 3",
               category: "Videogame",
-              heroTag: 'witcher',
+              id: 'witcher',
               onPressed: () {
                 Navigator.push(
                   context,
@@ -26,7 +26,7 @@ class ReviewListRoute extends StatelessWidget {
                     builder: (context) => Review(
                       title: "The Witcher 3",
                       body: "Wow this is great 10/10 would play again.",
-                      heroTag: 'witcher',
+                      id: 'witcher',
                       image: Image.asset('assets/the-witcher-3.png'),
                     ),
                   ),
@@ -37,7 +37,7 @@ class ReviewListRoute extends StatelessWidget {
               image: Image.asset('assets/crepe.png'),
               title: "Pannakoeken (Crepes)",
               category: "Food",
-              heroTag: 'crepe',
+              id: 'crepe',
               onPressed: () {
                 Navigator.push(
                   context,
@@ -45,7 +45,7 @@ class ReviewListRoute extends StatelessWidget {
                     builder: (context) => Review(
                       title: "Pannakoeken (Crepes)",
                       body: "Wow this is great 10/10 would eat again.",
-                      heroTag: 'crepe',
+                      id: 'crepe',
                       image: Image.asset('assets/crepe.png'),
                     ),
                   ),
@@ -56,7 +56,7 @@ class ReviewListRoute extends StatelessWidget {
               image: Image.asset('assets/dank-meme.png'),
               title: "Dank Memes",
               category: "Internet",
-              heroTag: 'meme',
+              id: 'meme',
               onPressed: () {
                 Navigator.push(
                   context,
@@ -64,7 +64,7 @@ class ReviewListRoute extends StatelessWidget {
                     builder: (context) => Review(
                       title: "Dank Memes",
                       body: "Wow this is great 10/10 would laugh again.",
-                      heroTag: 'meme',
+                      id: 'meme',
                       image: Image.asset('assets/dank-meme.png'),
                     ),
                   ),

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
 class ReviewCard extends StatelessWidget {
+  final String id;
   final Image image;
   final String title;
   final String category;
-  final String heroTag;
   final void Function()? onPressed;
 
   const ReviewCard({
     Key? key,
+    required this.id,
     required this.image,
     required this.title,
     required this.category,
     required this.onPressed,
-    required this.heroTag,
   }) : super(key: key);
 
   @override
@@ -25,7 +25,7 @@ class ReviewCard extends StatelessWidget {
             trailing: SizedBox(
               width: 70,
               child: Hero(
-                tag: heroTag,
+                tag: id,
                 child: image,
               ),
             ),

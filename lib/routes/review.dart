@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Review extends StatefulWidget {
   final String title;
   final String body;
   final Image image;
-  final String heroTag;
+  final String id;
 
   const Review({
     Key? key,
+    required this.id,
     required this.title,
     required this.body,
     required this.image,
-    required this.heroTag,
   }) : super(key: key);
 
   @override
@@ -20,6 +21,22 @@ class Review extends StatefulWidget {
 
 class _ReviewState extends State<Review> {
   String notes = '';
+
+  _ReviewState() {
+    _loadNotes();
+  }
+
+  void _loadNotes() async {
+    var prefs = await SharedPreferences.getInstance();
+    setState(() {
+      notes = prefs.getString("review-notes-${widget.id}") ?? '';
+    });
+  }
+
+  void _saveNotes() async {
+    var prefs = await SharedPreferences.getInstance();
+    prefs.setString("review-notes-${widget.id}", notes);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +50,7 @@ class _ReviewState extends State<Review> {
       ),
       body: Column(
         children: [
-          Hero(tag: widget.heroTag, child: widget.image),
+          Hero(tag: widget.id, child: widget.image),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(widget.body),
@@ -71,6 +88,7 @@ class _ReviewState extends State<Review> {
               onPressed: () {
                 setState(() {
                   notes = notesController.text;
+                  _saveNotes();
                 });
 
                 Navigator.of(context).pop();
