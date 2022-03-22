@@ -46,7 +46,7 @@ class _ReviewState extends State<Review> {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(notes!),
+              child: Text(notes),
             ),
           ]
         ],
