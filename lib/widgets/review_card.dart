@@ -4,6 +4,7 @@ class ReviewCard extends StatelessWidget {
   final Image image;
   final String title;
   final String category;
+  final String heroTag;
   final void Function()? onPressed;
 
   const ReviewCard({
@@ -12,6 +13,7 @@ class ReviewCard extends StatelessWidget {
     required this.title,
     required this.category,
     required this.onPressed,
+    required this.heroTag,
   }) : super(key: key);
 
   @override
@@ -19,8 +21,14 @@ class ReviewCard extends StatelessWidget {
     return Card(
       child: Column(
         children: [
-          image,
           ListTile(
+            trailing: SizedBox(
+              width: 70,
+              child: Hero(
+                tag: heroTag,
+                child: image,
+              ),
+            ),
             title: Text(title),
             subtitle: Text("Category: $category"),
           ),
